@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Word Counter</title>
+    <meta name="description" content="Simple word counter">
+    <meta name="author" content="AlessioPremoli">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Word counter</h1>
+    <div class="cnt">
+        <div class="counters">
+            <div>
+                Words: <strong id="words">0</strong>
+            </div>
+            <div>
+                Characters (no withespaces): <strong id="chars">0</strong>
+            </div>
+            <div>
+                Characters (including withespaces): <strong id="chars-whitespace">0</strong>
+            </div>
+        </div>
+        <textarea id="textarea" placeholder="Write something..."></textarea>
+
+    </div>
+
+
+
+    <script src="js/word-count.js"></script>
+</body>
+
+</html>
