@@ -26,7 +26,7 @@ body {
 }
 
 h1 {
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.5px;
   margin: 0;
 }
@@ -150,11 +150,11 @@ a {
   }
 
   /* only do this on non-mobile devices as it is impossible to "hover" on mobile */
-  a, .info {
+  footer > p, .info {
     opacity: 0.35;
   }
 
-  :where(a, .info):hover {
+  :where(footer > p, .info):hover {
     opacity: 1;
   }
 }
