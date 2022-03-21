@@ -99,6 +99,7 @@ button:last-of-type {
 
 input[type="checkbox"] {
   accent-color: #aaa;
+  margin-right: 5px;
 }
 
 .monospace {
