@@ -19,7 +19,7 @@ textarea.addEventListener('input', trackText);
 // from https://codepen.io/balasubramanim/pen/xypRMP
 
 window.readingTime = ev => {
-  const wordsPerMinute = 215;
+  const wordsPerMinute = 240;
   let result;
   let textLength = ev.value.split(' ').length;
   if(textLength > 0){
