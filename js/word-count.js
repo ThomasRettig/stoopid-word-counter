@@ -1,7 +1,8 @@
 let textarea = document.getElementById("textarea");
-if (localStorage.getItem('text-value')) {
-    textarea.value = localStorage.getItem('text-value');
-}
+if (localStorage.getItem('textValue')) {
+    textarea.value = localStorage.getItem('textValue');
+};
+
 const trackText = e => {
     let words = e.target.value.split(/\s/g);
     if (words[words.length - 1] === '') {
@@ -9,7 +10,19 @@ const trackText = e => {
     }
     document.getElementById('words').innerHTML = words.length;
     document.getElementById('chars').innerHTML = e.target.value.replace(/\s/g, '').length;
-    document.getElementById('chars-whitespace').innerHTML = e.target.value.length;
-    localStorage.setItem('text-value', e.target.value)
-}
+    document.getElementById('charsWhitespace').innerHTML = e.target.value.length;
+    localStorage.setItem('textValue', e.target.value)
+};
+
 textarea.addEventListener('input', trackText);
+
+window.readingTime = ev => {
+  const wordsPerMinute = 215;
+  let result;
+  let textLength = ev.value.split(" ").length;
+  if(textLength > 0){
+    let value = Math.ceil(textLength / wordsPerMinute);
+    result = `${value} min`;
+  }
+    document.getElementById("readingTime").innerText = result;
+};
