@@ -2,10 +2,13 @@ var CACHE = 'cache-v1';
 
 var urls = [
   '/',
+  'js/word-count.js',
   'css/styles.css',
   'icon-256x256.svg',
+  'install.svg',
+  'share.svg',
   'sw.js',
-  'manifest.webmanifest'
+  'manifest.webmanifest',
 ];
 
 self.addEventListener('install', function(event) {
