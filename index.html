@@ -21,6 +21,7 @@
                         <p>Words <br><strong id="words" aria-live="polite" aria-relevant="text">0</strong></p>
                         <p>Characters <br><strong id="chars-whitespace" aria-live="polite" aria-relevant="text">0</strong></p>
                         <p>Characters (no whitespace) <br><strong id="chars" aria-live="polite" aria-relevant="text">0</strong></p>
+                        <p>Reading time<br><strong id="readingTime">0 min</strong></p>
                     </div>
                     <br>
                     <div id="buttons">
@@ -29,12 +30,24 @@
                     </div>
                 </div>
             </section>
-            <textarea id="textarea" placeholder="Type here…" autofocus tabindex="1"></textarea>
+            <textarea id="textarea" onkeyup="calcRT(this)" placeholder="Type here…" tabindex="1"></textarea>
         </main>
         <footer>
-            <p><a href="https://github.com/ThomasRettig/word-counter" target="_blank">Github source code</a></p>
+            <p><a href="https://github.com/ThomasRettig/word-counter" target="_blank" rel="noreferrer">Github source code</a></p>
         </footer>
         <script>
+            window.calcRT = ev => {
+              const wordsPerMinute = 200; // Average case.
+              let result;
+              
+              let textLength = ev.value.split(" ").length; // Split by words
+              if(textLength > 0){
+                let value = Math.ceil(textLength / wordsPerMinute);
+                result = `${value} min`;
+              }
+                document.getElementById("readingTime").innerText = result;
+            };
+
             if (navigator && navigator.serviceWorker) {
               navigator.serviceWorker.register('sw.js');
             }
