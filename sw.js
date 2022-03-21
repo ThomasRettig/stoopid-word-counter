@@ -5,6 +5,7 @@ var urls = [
   'js/word-count.js',
   'css/styles.css',
   'icon-256x256.svg',
+  'icon-256x256.png',
   'install.svg',
   'share.svg',
   'sw.js',

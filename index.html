@@ -9,21 +9,24 @@
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
         <link rel="icon" type="image/svg+xml" href="icon-256x256.svg">
+        <link rel="apple-touch-icon" size="256x256" href="icon-256x256.png">
         <link rel="manifest" href="manifest.webmanifest">
     </head>
     <body>
         <h1>Word Counter</h1>
         <main>
             <section class="counters">
-                <div class="options">
+                <div class="info">
                     <div>
                         <p>Words <br><strong id="words" aria-live="polite" aria-relevant="text">0</strong></p>
                         <p>Characters <br><strong id="chars-whitespace" aria-live="polite" aria-relevant="text">0</strong></p>
                         <p>Characters (no whitespace) <br><strong id="chars" aria-live="polite" aria-relevant="text">0</strong></p>
                     </div>
                     <br>
-                    <button id="share"><img src="share.svg" draggable="false" alt="Share icon" aria-hidden="true"></img>Share</button>
-                    <button id="install"><img src="install.svg" draggable="false" alt="Install icon" aria-hidden="true"></img>Install app</button>
+                    <div id="buttons">
+                        <button id="share"><img src="share.svg" draggable="false" alt="Share icon" aria-hidden="true"></img>Share</button>
+                        <button id="install"><img src="install.svg" draggable="false" alt="Install icon" aria-hidden="true"></img>Install app</button>
+                    </div>
                 </div>
             </section>
             <textarea id="textarea" placeholder="Type here…" autofocus tabindex="1"></textarea>

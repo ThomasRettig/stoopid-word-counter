@@ -46,11 +46,11 @@ textarea:focus {
   border-color: #ccc;
 }
 
-a, .options {
+a, .info {
   opacity: 0.35;
 }
 
-:where(a, .options):hover {
+:where(a, .info):hover {
   opacity: 1;
 }
 
@@ -78,8 +78,15 @@ button {
   padding: 0;
 }
 
-button:first-of-type {
-  margin-bottom: 6px;
+#buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+button:last-of-type {
+  margin-bottom: 10px;
 }
 
 img {
@@ -118,6 +125,14 @@ a {
 
   p {
     margin: 0;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  /* TODO: find a way to ensure SVG styles are not overriden */
+  /* somehow the dark-mode specific inlined styles in the SVGs are overriding the `fill` attribute, so we have to just invert it the old-fashioned way */
+  img {
+    filter: invert(1);
   }
 }
 
