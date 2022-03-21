@@ -2,7 +2,7 @@ var CACHE = 'cache-v1';
 
 var urls = [
   '/',
-  'js/word-count.js',
+  'js/scripts.js',
   'css/styles.css',
   'icon-256x256.svg',
   'icon-256x256.png',

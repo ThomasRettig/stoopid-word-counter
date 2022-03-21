@@ -28,3 +28,12 @@ window.readingTime = ev => {
   }
     document.getElementById("readingTime").innerText = result;
 };
+
+// toggle monospaced font
+document.getElementById("toggleFont").addEventListener('change', function() {
+    if (this.checked) {
+        document.getElementById("textarea").classList.add("monospace");
+    } else {
+        document.getElementById("textarea").classList.remove("monospace");
+    }
+});

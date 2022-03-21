@@ -1,6 +1,7 @@
 :root {
   --base-font-size: 16px;
   --medium-font-size: 25px;
+  --mono-font-stack: Consolas, "Lucida Console", Monaco, monospace;
 }
 
 ::selection {
@@ -47,7 +48,7 @@ textarea:focus {
   border-color: #ccc;
 }
 
-p, button, br {
+p, button, br, input {
   user-select: none;
 }
 
@@ -59,7 +60,7 @@ p, button, br {
 }
 
 div > p {
-  font-family: Consolas, "Lucida Console", Monaco, monospace;
+  font-family: var(--mono-font-stack);
 }
 
 strong {
@@ -89,6 +90,20 @@ button:last-of-type {
   margin-bottom: 13px;
 }
 
+#font {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+input[type="checkbox"] {
+  accent-color: #aaa;
+}
+
+.monospace {
+  font-family: var(--mono-font-stack);
+}
+
 img {
   width: 18px;
   height: auto;
@@ -106,7 +121,7 @@ a {
 
 @media screen and (min-width: 815px) {
   body {
-    max-width: 85%;
+    max-width: 90%;
   }
 
   main {
