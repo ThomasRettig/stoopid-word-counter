@@ -1,4 +1,4 @@
-let textarea = document.getElementById("textarea");
+let textarea = document.getElementById('textarea');
 if (localStorage.getItem('textValue')) {
     textarea.value = localStorage.getItem('textValue');
 };
@@ -21,19 +21,19 @@ textarea.addEventListener('input', trackText);
 window.readingTime = ev => {
   const wordsPerMinute = 215;
   let result;
-  let textLength = ev.value.split(" ").length;
+  let textLength = ev.value.split(' ').length;
   if(textLength > 0){
     let value = Math.ceil(textLength / wordsPerMinute);
     result = `${value} min`;
   }
-    document.getElementById("readingTime").innerText = result;
+    document.getElementById('readingTime').innerText = result;
 };
 
 // toggle monospaced font
-document.getElementById("toggleFont").addEventListener('change', function() {
+document.getElementById('toggleFont').addEventListener('change', function() {
     if (this.checked) {
-        document.getElementById("textarea").classList.add("monospace");
+        document.getElementById('textarea').classList.add('monospace');
     } else {
-        document.getElementById("textarea").classList.remove("monospace");
+        document.getElementById('textarea').classList.remove('monospace');
     }
 });
