@@ -3,7 +3,9 @@ var CACHE = 'cache-v1';
 var urls = [
   '/',
   'css/styles.css',
-  'icon-256x256.svg'
+  'icon-256x256.svg',
+  'sw.js',
+  'manifest.webmanifest'
 ];
 
 self.addEventListener('install', function(event) {

@@ -1,0 +1,18 @@
+{
+    "theme_color": "#008080",
+    "background_color": "#008080",
+    "display": "minimal-ui",
+    "orientation": "any",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Word Counter",
+    "description": "Simple word counter",
+    "short_name": "Word Count",
+    "icons": [
+        {
+            "src": "/icon-256x256.svg",
+            "sizes": "256x256",
+            "type": "image/svg+xml"
+        }
+    ]
+}
