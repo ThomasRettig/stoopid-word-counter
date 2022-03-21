@@ -1,79 +1,114 @@
+:root {
+  --base-font-size: 16px;
+  --medium-font-size: 25px;
+}
+
+::selection {
+  background: #131313;
+  color: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
 html {
-    font-family: 'Quicksand', sans-serif;
-    color: #283747;
-    margin: 0;
-    padding: 0;
+  -webkit-text-size-adjust: none;
 }
 
 body {
-    background-color: #F3F3F3;
-    margin: 0;
-    padding: 0;
-    margin: 1rem;
-
+  margin: 5vw;
+  padding: 0;
+  max-width: 95%;
 }
 
-.cnt {
-    width: 50%;
+h1 {
+  font-weight: 500;
+  margin: 0;
 }
 
-.counters {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
-    width: 100%;
-    border-radius: 8px;
-
+textarea, p {
+  font-size: var(--base-font-size);
 }
 
 textarea {
-    width: 100%;
-    height: 300px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    padding: 1rem;
-    resize: none;
-    background-color: #F8F8F8;
-    color: #283747;
-    border-radius: 8px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    border: none;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  min-height: 60vh;
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #ccc;
+}
+
+div {
+  opacity: 0.35;
+}
+
+div:hover {
+  opacity: 1;
+}
+
+p {
+  user-select: none;
 }
 
 strong {
-    color: #932432;
+  font-size: var(--medium-font-size);
+  user-select: text;
+  display: block;
+  margin-top: 5px;
 }
 
-textarea::placeholder {
-    font-style: italic;
+@media screen and (min-width: 815px) {
+  body {
+    max-width: 85%;
+  }
+
+  main {
+    display: flex;
+    justify-content: start;
+    flex-direction: row-reverse;
+  }
+
+  section {
+    margin-left: 2vw;
+  }
+
+  h1 {
+    margin: 15px 0px;
+  }
+
+  p {
+    margin: 0;
+  }
 }
 
-@media only screen and (max-device-width: 800px) {
-    .cnt {
-        width: 100%;
-        height:90vh;
-    }
-    h1 {
-        font-size: 128px;
-        text-align: center;
-        margin: 1rem;
-    }
-    textarea, textarea::placeholder {
-        font-size: 48px;
-    }
-    div {
-        font-size: 48px;
-        text-align: center;
-    }
-    .counters {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-    textarea {
-        width: calc(100vw - 4rem);
-        height: 80%;
-    }
-} 
+@media screen and (prefers-color-scheme: dark) {
+  ::selection {
+    background-color: #ccc;
+    color: #131313;
+  }
+
+  * {
+    color: #ccc;
+  }
+
+  body, textarea {
+    background: #131313;
+  }
+
+  textarea {
+    border: 2px solid #333;
+  }
+
+  textarea:focus {
+    outline: none;
+    border-color: #aaa;
+  }
+}

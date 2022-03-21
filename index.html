@@ -4,28 +4,28 @@
         <meta charset="utf-8">
         <title>Word Counter</title>
         <meta name="description" content="Simple word counter">
-        <meta name="author" content="AlessioPremoli">
+        <meta name="author" content="Thomas Rettig">
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="favicon.png"/>
+        <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="icon-256x256.svg">
     </head>
     <body>
-        <h1>Word counter</h1>
-        <div class="cnt">
-            <div class="counters">
+        <h1>Word Counter</h1>
+        <main>
+            <section class="counters">
                 <div>
-                    Words: <strong id="words">0</strong>
+                    <p>Words <br><strong id="words" aria-live="polite" aria-relevant="text">0</strong></p>
+                    <p>Characters <br><strong id="chars-whitespace" aria-live="polite" aria-relevant="text">0</strong></p>
+                    <p>Characters (no whitespace) <br><strong id="chars" aria-live="polite" aria-relevant="text">0</strong></p>
                 </div>
-                <div>
-                    Characters (no withespaces): <strong id="chars">0</strong>
-                </div>
-                <div>
-                    Characters (including withespaces): <strong id="chars-whitespace">0</strong>
-                </div>
-            </div>
-            <textarea id="textarea" placeholder="Write something..."></textarea>
-        </div>
-        <script src="js/word-count.js"></script>
+            </section>
+            <textarea id="textarea" placeholder="Type here…"></textarea>
+        </main>
+        <script>
+            if (navigator && navigator.serviceWorker) {
+              navigator.serviceWorker.register('sw.js');
+            }
+        </script>
+        <script src="js/word-count.js" async></script>
     </body>
 </html>
