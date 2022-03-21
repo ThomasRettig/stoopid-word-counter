@@ -16,6 +16,8 @@ const trackText = e => {
 
 textarea.addEventListener('input', trackText);
 
+// from https://codepen.io/balasubramanim/pen/xypRMP
+
 window.readingTime = ev => {
   const wordsPerMinute = 215;
   let result;
