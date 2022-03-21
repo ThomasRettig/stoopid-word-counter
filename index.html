@@ -28,6 +28,9 @@
             </section>
             <textarea id="textarea" placeholder="Type here…"></textarea>
         </main>
+        <footer>
+            <p><a href="https://github.com/ThomasRettig/word-counter" target="_blank">Github source code</a></p>
+        </footer>
         <script>
             if (navigator && navigator.serviceWorker) {
               navigator.serviceWorker.register('sw.js');
@@ -46,23 +49,13 @@
             addBtn.style.display = 'none';
 
             window.addEventListener('beforeinstallprompt', (e) => {
-              // Stash the event so it can be triggered later.
               deferredPrompt = e;
-              // Update UI to notify the user they can add to home screen
               addBtn.style.display = 'block';
 
               addBtn.addEventListener('click', (e) => {
-                // hide our user interface that shows our A2HS button
                 addBtn.style.display = 'none';
-                // Show the prompt
                 deferredPrompt.prompt();
-                // Wait for the user to respond to the prompt
                 deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                      console.log('User accepted PWA install prompt.');
-                    } else {
-                      console.log('User dismissed PWA install prompt.');
-                    }
                     deferredPrompt = null;
                   });
               });

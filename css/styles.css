@@ -46,11 +46,11 @@ textarea:focus {
   border-color: #ccc;
 }
 
-.options {
+a, .options {
   opacity: 0.35;
 }
 
-.options:hover {
+:where(a, .options):hover {
   opacity: 1;
 }
 
@@ -83,6 +83,14 @@ img {
   height: auto;
   vertical-align: bottom;
   margin-right: 6px;
+}
+
+footer > p {
+  margin-top: 15px;
+}
+
+a {
+  text-decoration-color: #aaa;
 }
 
 @media screen and (min-width: 815px) {
