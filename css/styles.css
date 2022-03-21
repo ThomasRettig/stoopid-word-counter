@@ -58,6 +58,10 @@ p, button, br {
   user-select: none;
 }
 
+div > p {
+  font-family: Consolas, "Lucida Console", Monaco, monospace;
+}
+
 strong {
   font-size: var(--medium-font-size);
   user-select: text;
