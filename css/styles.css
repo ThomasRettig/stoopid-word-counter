@@ -46,15 +46,15 @@ textarea:focus {
   border-color: #ccc;
 }
 
-div {
+.options {
   opacity: 0.35;
 }
 
-div:hover {
+.options:hover {
   opacity: 1;
 }
 
-p {
+p, button, br {
   user-select: none;
 }
 
@@ -63,6 +63,26 @@ strong {
   user-select: text;
   display: block;
   margin-top: 5px;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+}
+
+button:first-of-type {
+  margin-bottom: 6px;
+}
+
+img {
+  width: 18px;
+  height: auto;
+  vertical-align: bottom;
+  margin-right: 6px;
 }
 
 @media screen and (min-width: 815px) {
@@ -97,6 +117,10 @@ strong {
 
   * {
     color: #ccc;
+  }
+
+  html {
+    color-scheme: dark;
   }
 
   body, textarea {

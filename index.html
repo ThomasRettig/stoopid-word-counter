@@ -5,6 +5,7 @@
         <title>Word Counter</title>
         <meta name="description" content="Simple word counter">
         <meta name="author" content="Thomas Rettig">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
         <link rel="icon" type="image/svg+xml" href="icon-256x256.svg">
@@ -14,10 +15,15 @@
         <h1>Word Counter</h1>
         <main>
             <section class="counters">
-                <div>
-                    <p>Words <br><strong id="words" aria-live="polite" aria-relevant="text">0</strong></p>
-                    <p>Characters <br><strong id="chars-whitespace" aria-live="polite" aria-relevant="text">0</strong></p>
-                    <p>Characters (no whitespace) <br><strong id="chars" aria-live="polite" aria-relevant="text">0</strong></p>
+                <div class="options">
+                    <div>
+                        <p>Words <br><strong id="words" aria-live="polite" aria-relevant="text">0</strong></p>
+                        <p>Characters <br><strong id="chars-whitespace" aria-live="polite" aria-relevant="text">0</strong></p>
+                        <p>Characters (no whitespace) <br><strong id="chars" aria-live="polite" aria-relevant="text">0</strong></p>
+                    </div>
+                    <br>
+                    <button id="share"><img src="share.svg" draggable="false" alt="Share icon" aria-hidden="true"></img>Share</button>
+                    <button id="install"><img src="install.svg" draggable="false" alt="Install icon" aria-hidden="true"></img>Install app</button>
                 </div>
             </section>
             <textarea id="textarea" placeholder="Type here…"></textarea>
@@ -26,6 +32,43 @@
             if (navigator && navigator.serviceWorker) {
               navigator.serviceWorker.register('sw.js');
             }
+
+            document.getElementById("share").addEventListener('click', () => {
+                navigator.share({
+                  title: 'Word Counter',
+                  text: 'A simple word counter by Thomas Rettig',
+                  url: window.location.href
+                })
+            })
+
+            let deferredPrompt;
+            const addBtn = document.getElementById('install');
+            addBtn.style.display = 'none';
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+              // Prevent Chrome 67 and earlier from automatically showing the prompt
+              e.preventDefault();
+              // Stash the event so it can be triggered later.
+              deferredPrompt = e;
+              // Update UI to notify the user they can add to home screen
+              addBtn.style.display = 'block';
+
+              addBtn.addEventListener('click', (e) => {
+                // hide our user interface that shows our A2HS button
+                addBtn.style.display = 'none';
+                // Show the prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                      console.log('User accepted PWA install prompt.');
+                    } else {
+                      console.log('User dismissed PWA install prompt.');
+                    }
+                    deferredPrompt = null;
+                  });
+              });
+            });
         </script>
         <script src="js/word-count.js" async></script>
     </body>
