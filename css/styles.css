@@ -1,6 +1,7 @@
 :root {
   --base-font-size: 16px;
   --medium-font-size: 25px;
+  --base-font-stack: "Inter", system-ui, sans-serif;
   --mono-font-stack: Consolas, "Lucida Console", Monaco, monospace;
 }
 
@@ -11,7 +12,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--base-font-stack);
 }
 
 html {
