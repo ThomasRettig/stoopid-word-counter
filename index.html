@@ -24,21 +24,23 @@
         <h1>Word Counter</h1>
         <main>
             <section class="counters">
-                <div class="info">
-                    <div>
-                        <p>Words <br><strong id="words" aria-live="polite" aria-relevant="text">0</strong></p>
-                        <p>Characters <br><strong id="charsWhitespace" aria-live="polite" aria-relevant="text">0</strong></p>
-                        <p>Characters (no whitespace) <br><strong id="chars" aria-live="polite" aria-relevant="text">0</strong></p>
-                        <p>Reading time<br><strong id="readingTime">0 min</strong></p>
-                    </div>
-                    <br>
-                    <div id="buttons">
-                        <div id="font">
-                            <input type="checkbox" id="toggleFont"><label for="toggleFont">Monospace font</label>
+                <div class="sticky">
+                    <div class="info">
+                        <div>
+                            <p>Words <br><strong id="words" aria-live="polite" aria-relevant="text">0</strong></p>
+                            <p>Characters <br><strong id="charsWhitespace" aria-live="polite" aria-relevant="text">0</strong></p>
+                            <p>Characters (no whitespace) <br><strong id="chars" aria-live="polite" aria-relevant="text">0</strong></p>
+                            <p>Reading time<br><strong id="readingTime">0 min</strong></p>
                         </div>
-                        <button id="share"><img src="share.svg" draggable="false" alt="Share icon" aria-hidden="true"></img>Share</button>
-                        <button id="install"><img src="install.svg" draggable="false" alt="Install icon" aria-hidden="true"></img>Install app</button>
-                    </div>
+                        <br>
+                        <div id="buttons">
+                            <div id="font">
+                                <input type="checkbox" id="toggleFont"><label for="toggleFont">Monospace font</label>
+                            </div>
+                            <button id="share"><img src="share.svg" draggable="false" alt="Share icon" aria-hidden="true"></img>Share</button>
+                            <button id="install"><img src="install.svg" draggable="false" alt="Install icon" aria-hidden="true"></img>Install app</button>
+                        </div>
+                </div>
                 </div>
             </section>
             <textarea id="textarea" onkeyup="readingTime(this)" placeholder="Type here…" tabindex="1"></textarea>

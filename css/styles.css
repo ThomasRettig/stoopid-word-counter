@@ -91,6 +91,11 @@ button:last-of-type {
   margin-bottom: 13px;
 }
 
+.sticky {
+  position: sticky;
+  top: 15px;
+}
+
 #font {
   display: flex;
   justify-content: space-between;
