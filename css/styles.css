@@ -121,7 +121,6 @@ button:last-of-type {
 }
 
 input[type="checkbox"] {
-  accent-color: #aaa;
   margin-right: 5px;
 }
 
@@ -179,7 +178,7 @@ a {
 }
 
 @media screen and (prefers-color-scheme: light) {
-  /* do not apply to dark mode as it will lead to decreased readability */
+  /* do not font smoothing in dark mode as it reduces readability */
   html {
     -webkit-font-smoothing: antialiased;
   }
