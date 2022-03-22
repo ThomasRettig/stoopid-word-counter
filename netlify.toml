@@ -1,4 +1,29 @@
+# make sure the service worker is always reloaded
 [[headers]]
-  for = "*"
+  for = "sw.js"
+  [headers.values]
+    cache-control = '''
+      max-age=0,
+      no-cache,
+      no-store,
+      must-revalidate'''
+
+[[headers]]
+  for = "*.css"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.svg"
+    [headers.values]
+      Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.png"
+    [headers.values]
+      Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.woff2"
+    [headers.values]
+      Cache-Control = "public, max-age=604800"
