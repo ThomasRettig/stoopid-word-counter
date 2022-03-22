@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Inter";
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(".././fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style:  normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(".././fonts/Inter-Bold.woff2") format("woff2");
+}
+
 :root {
   --base-font-size: 16px;
   --medium-font-size: 25px;
@@ -29,7 +45,6 @@ body {
 }
 
 h1 {
-  font-weight: 600;
   letter-spacing: -0.5px;
   margin: 0;
 }
@@ -164,8 +179,14 @@ a {
 }
 
 @media screen and (prefers-color-scheme: light) {
-  /* do not apply to dark mode as it will lead to decreased readability*/
-  -webkit-font-smoothing: antialiased;
+  /* do not apply to dark mode as it will lead to decreased readability */
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img {
+    filter: invert(1);
+  }
 }
 
 @media screen and (prefers-color-scheme: dark) {

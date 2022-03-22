@@ -10,6 +10,8 @@ var urls = [
   'share.svg',
   'sw.js',
   'manifest.webmanifest',
+  'fonts/Inter-Bold.woff2',
+  'fonts/Inter-Regular.woff2'
 ];
 
 self.addEventListener('install', function(event) {
