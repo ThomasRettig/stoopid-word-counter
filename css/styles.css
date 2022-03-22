@@ -164,14 +164,6 @@ a {
 }
 
 @media screen and (prefers-color-scheme: light) {
-  /* TODO: find a way to ensure SVG styles are not overriden */
-  /* somehow the dark-mode specific inlined styles in the SVGs are overriding the `fill` attribute, so we have to just invert it the old-fashioned way */
-  img {
-    filter: invert(1);
-  }
-}
-
-@media screen and (prefers-color-scheme: light) {
   /* do not apply to dark mode as it will lead to decreased readability*/
   -webkit-font-smoothing: antialiased;
 }
