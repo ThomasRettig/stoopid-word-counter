@@ -78,15 +78,22 @@ p, button, br, input {
   height: 100%;
 }
 
-div > p {
+div > p > span {
   font-family: var(--mono-font-stack);
+}
+
+div > p:not(:last-of-type) {
+  margin-bottom: 8px;
 }
 
 strong {
   font-size: var(--medium-font-size);
-  user-select: text;
   display: block;
   margin-top: 8px;
+}
+
+strong, div > p > span {
+  user-select: text;
 }
 
 button {
@@ -157,6 +164,10 @@ a {
 
   section {
     margin-left: 2vw;
+  }
+
+  textarea {
+    width: 75%;
   }
 
   h1 {
