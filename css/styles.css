@@ -170,6 +170,11 @@ a {
   }
 }
 
+@media screen and (prefers-color-scheme: light) {
+  /* do not apply to dark mode as it will lead to decreased readability*/
+  -webkit-font-smoothing: antialiased;
+}
+
 @media screen and (prefers-color-scheme: dark) {
   ::selection {
     background-color: var(--dim-white);
