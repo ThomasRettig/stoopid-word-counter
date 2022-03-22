@@ -3,11 +3,14 @@
   --medium-font-size: 25px;
   --base-font-stack: "Inter", system-ui, sans-serif;
   --mono-font-stack: Consolas, "Lucida Console", Monaco, monospace;
+  --dim-black: #131313;
+  --dim-white: #ddd;
+  --dim-gray: #161616;
 }
 
 ::selection {
-  background: #131313;
-  color: #ccc;
+  background: var(--dim-black);
+  color: var(--dim-white);
 }
 
 * {
@@ -36,7 +39,7 @@ textarea, p {
 }
 
 textarea {
-  border: 2px solid #ccc;
+  border: 2px solid var(--dim-white);
   border-radius: 5px;
   min-height: 60vh;
   padding: 1rem;
@@ -169,8 +172,8 @@ a {
 
 @media screen and (prefers-color-scheme: dark) {
   ::selection {
-    background-color: #ccc;
-    color: #131313;
+    background-color: var(--dim-white);
+    color: var(--dim-black);
   }
 
   * {
@@ -182,11 +185,11 @@ a {
   }
 
   body {
-    background-color: #131313;
+    background-color: var(--dim-black);
   }
 
   textarea {
-    background-color: #161616;
+    background-color: var(--dim-gray);
     border: 2px solid #333;
   }
 
