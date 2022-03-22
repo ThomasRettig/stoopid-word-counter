@@ -12,7 +12,7 @@ const trackText = e => {
     document.getElementById('chars').innerHTML = e.target.value.replace(/\s/g, '').length;
     document.getElementById('charsWhitespace').innerHTML = e.target.value.length;
     document.title = `Word count: ${words.length}`;
-    localStorage.setItem('textValue', e.target.value)
+    localStorage.setItem('textValue', e.target.value);
 };
 
 textarea.addEventListener('input', trackText);
