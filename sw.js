@@ -10,7 +10,6 @@ var urls = [
   'share.svg',
   'settings.svg',
   'sw.js',
-  'js/dialog.min.js',
   'manifest.webmanifest',
   'fonts/Inter-Bold.woff2',
   'fonts/Inter-Regular.woff2'

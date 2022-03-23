@@ -223,11 +223,11 @@ a {
   }
 
   /* only do this on non-mobile devices as it is impossible to "hover" on mobile */
-  footer > p, .info {
+  footer > p {
     opacity: 0.35;
   }
 
-  :where(footer > p, .info):hover {
+  footer > p:hover {
     opacity: 1;
   }
 }
