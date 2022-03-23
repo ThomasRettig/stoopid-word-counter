@@ -203,6 +203,12 @@ a {
   margin: 0;
 }
 
+@media screen and (max-width: 815px) {
+  #share {
+    margin-bottom: 8px;
+  }
+}
+
 @media screen and (min-width: 815px) {
   body {
     max-width: 90%;
