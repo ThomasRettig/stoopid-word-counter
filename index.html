@@ -26,9 +26,9 @@
                 <div class="sticky">
                     <div class="info">
                         <div>
-                            <p>Words <br><strong id="words" aria-live="polite" aria-relevant="text">0</strong></p>
-                            <p>Characters<br><strong id="charsWhitespace" aria-live="polite" aria-relevant="text">0</strong></p>
-                            <p>Characters (no spaces): <span id="chars" aria-live="polite" aria-relevant="text">0</span></p>
+                            <p>Words <br><strong id="words" aria-relevant="text">0</strong></p>
+                            <p>Characters<br><strong id="charsWhitespace" aria-relevant="text">0</strong></p>
+                            <p>Characters (no spaces): <span id="chars" aria-relevant="text">0</span></p>
                             <p>Reading time: <span id="readingTime">0 min</span></p>
                             <p>File size: <span id="results">0 B</span></p>
                         </div>
@@ -37,10 +37,24 @@
                             <div id="font">
                                 <input type="checkbox" id="toggleFont"><label for="toggleFont">Monospace font</label>
                             </div>
-                            <button id="share"><img src="share.svg" draggable="false" alt="Share icon" aria-hidden="true"></img>Share</button>
-                            <button id="install"><img src="install.svg" draggable="false" alt="Install icon" aria-hidden="true"></img>Install app</button>
+                            <button data-a11y-dialog-show="dialog"><img src="settings.svg" draggable="false" alt="Install icon" aria-hidden="true">Settings</button>
+                            <div class="dialog-container" id="dialog" aria-hidden="true" aria-labelledby="title" aria-describedby="description">
+                                <div class="dialog-overlay" data-a11y-dialog-hide></div>
+                                <div class="dialog-content" role="document">
+                                    <div class="dialog-header">
+                                        <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59 7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12 5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/><style>@media screen and (prefers-color-scheme:dark){svg{fill:#fff}}</style></svg>
+                                        </button>
+                                        <h1 id="title">Settings</h1>
+                                    </div>
+                                    <p id="description"></p>
+                                    <div class="colorPicker"></div>
+                                </div>
+                            </div>
+                            <button id="share"><img src="share.svg" draggable="false" alt="Share icon" aria-hidden="true">Share</button>
+                            <button id="install"><img src="install.svg" draggable="false" alt="Install icon" aria-hidden="true">Install app</button>
                         </div>
-                </div>
+                    </div>
                 </div>
             </section>
             <textarea id="textarea" onkeyup="readingTime(this)" placeholder="Type here…" tabindex="1"></textarea>
@@ -49,35 +63,36 @@
             <p><a href="https://github.com/ThomasRettig/word-counter" target="_blank" rel="noreferrer">Github source code</a> • <a href="https://twitter.com/thomasrettig13" target="_blank" rel="noreferrer">@thomasrettig13</a></p>
         </footer>
         <script>
-            if (navigator && navigator.serviceWorker) {
-              navigator.serviceWorker.register('sw.js');
-            };
-
-            document.getElementById("share").addEventListener('click', () => {
-                navigator.share({
-                  title: 'Word Counter',
-                  text: 'A simple word counter by Thomas Rettig',
-                  url: window.location.href
-                })
-            });
-
-            let deferredPrompt;
-            const addBtn = document.getElementById('install');
-            addBtn.style.display = 'none';
-
-            window.addEventListener('beforeinstallprompt', (e) => {
-              deferredPrompt = e;
-              addBtn.style.display = 'block';
-
-              addBtn.addEventListener('click', (e) => {
+        if (navigator && navigator.serviceWorker) {
+            navigator.serviceWorker.register('sw.js');
+        };
+        document.getElementById("share").addEventListener('click', () => {
+            navigator.share({
+                title: 'Word Counter',
+                text: 'A simple word counter by Thomas Rettig',
+                url: window.location.href
+            })
+        });
+        let deferredPrompt;
+        const addBtn = document.getElementById('install');
+        addBtn.style.display = 'none';
+        window.addEventListener('beforeinstallprompt', (e) => {
+            deferredPrompt = e;
+            addBtn.style.display = 'block';
+            addBtn.addEventListener('click', (e) => {
                 addBtn.style.display = 'none';
                 deferredPrompt.prompt();
                 deferredPrompt.userChoice.then((choiceResult) => {
                     deferredPrompt = null;
-                  });
-              });
+                });
             });
+        });
         </script>
         <script src="js/scripts.js" async></script>
+        <script src="js/dialog.min.js" defer></script>
+        <script type="module">
+            var dialogEl=document.getElementById("dialog");
+            var dialog=new A11yDialog(dialogEl);
+        </script>
     </body>
 </html>

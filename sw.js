@@ -8,7 +8,9 @@ var urls = [
   'icon-256x256.png',
   'install.svg',
   'share.svg',
+  'settings.svg',
   'sw.js',
+  'js/dialog.min.js',
   'manifest.webmanifest',
   'fonts/Inter-Bold.woff2',
   'fonts/Inter-Regular.woff2'
