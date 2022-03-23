@@ -58,7 +58,6 @@ textarea {
   border-radius: 5px;
   min-height: 60vh;
   padding: 1rem;
-  width: 100%;
   height: auto;
 }
 
@@ -222,6 +221,10 @@ a {
     margin: 0;
   }
 
+  .counters {
+    margin-left: calc(15px + 0.5vw);
+  }
+
   /* only do this on non-mobile devices as it is impossible to "hover" on mobile */
   footer > p {
     opacity: 0.35;
@@ -262,6 +265,7 @@ a {
   }
 
   textarea {
+    width: 100%;
     background-color: var(--dim-gray);
     border: 2px solid #333;
   }

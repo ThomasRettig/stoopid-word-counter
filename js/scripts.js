@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 let textarea = document.getElementById('textarea');
 if (localStorage.getItem('textValue')) {
     textarea.value = localStorage.getItem('textValue');
