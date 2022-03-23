@@ -212,6 +212,10 @@ a {
   img {
     filter: invert(1);
   }
+
+  input[type="range"] {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 815px) {
