@@ -39,6 +39,7 @@ html {
 }
 
 body {
+  accent-color: #555;
   margin: 5vw;
   padding: 0;
   max-width: 95%;
@@ -68,6 +69,14 @@ textarea:focus {
 
 p, button, br, input {
   user-select: none;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+input[type="range"] {
+  cursor: ew-resize;
 }
 
 .info {

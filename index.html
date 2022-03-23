@@ -38,13 +38,13 @@
                         <div class="flex">
                             <input type="checkbox" id="toggleFont"><label for="toggleFont">Monospace font</label>
                         </div>
-                        <label for="fontSlider">Font size</label><input type="range" min="16" max="28" value="0" id="fontSlider" step="2">
+                        <label for="fontSlider">Font size</label><input type="range" min="16" max="22" value="0" id="fontSlider" step="2">
                         <button id="share"><img src="share.svg" draggable="false" alt="Share icon" aria-hidden="true">Share</button>
                         <button id="install"><img src="install.svg" draggable="false" alt="Install icon" aria-hidden="true">Install app</button>
                     </div>
                 </div>
         </div>
-        <textarea id="textarea" onkeyup="readingTime(this)" placeholder="Type here…" tabindex="1"></textarea>
+        <textarea id="textarea" onkeyup="readingTime(this)" placeholder="Type here…" tabindex="1" aria-label="Enter text here to evaluate word count"></textarea>
     </main>
     <footer>
         <p><a href="https://github.com/ThomasRettig/word-counter" target="_blank" rel="noreferrer">Github source code</a> • <a href="https://twitter.com/thomasrettig13" target="_blank" rel="noreferrer">@thomasrettig13</a></p>
