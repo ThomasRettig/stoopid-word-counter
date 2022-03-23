@@ -18,7 +18,7 @@
   --base-font-size: 16px;
   --medium-font-size: 25px;
   --base-font-stack: "Inter", system-ui, sans-serif;
-  --mono-font-stack: Consolas, "Lucida Console", Monaco, monospace;
+  --mono-font-stack: ui-monospace, Menlo, Monaco, "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Fira Mono", "Consolas", "Droid Sans Mono", "Courier New", monospace;
   --dim-black: #131313;
   --dim-white: #ddd;
   --dim-gray: #161616;
@@ -121,7 +121,7 @@ button:last-of-type {
   top: 15px;
 }
 
-#font {
+.flex {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
