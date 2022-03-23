@@ -273,6 +273,10 @@ a {
     background-color: var(--dim-black);
   }
 
+  h1, strong, span {
+    color: white;
+  }
+
   textarea {
     width: 100%;
     background-color: var(--dim-gray);
