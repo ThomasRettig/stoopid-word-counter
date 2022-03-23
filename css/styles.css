@@ -205,7 +205,12 @@ a {
 
 @media screen and (max-width: 815px) {
   #share {
-    margin-bottom: 8px;
+    margin-bottom: 15px;
+  }
+
+  /* cheap hack to fix mobile bug */
+  img {
+    filter: invert(1);
   }
 }
 
