@@ -43,7 +43,7 @@ document.getElementById('toggleFont').addEventListener('change', function() {
 
 // font size slider
 document.getElementById('fontSlider').addEventListener('input', function() {
-    document.getElementById('textarea').style.fontSize = this.value + 'px';
+    document.getElementById('textarea').style.fontSize = `${this.value}px`;
 });
 
 // make textarea resize height automatically
@@ -55,7 +55,7 @@ for (let i = 0; i < tx.length; i++) {
 
 function OnInput() {
     this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
+    this.style.height = `${(this.scrollHeight)}px`;
 }
 
 /**
