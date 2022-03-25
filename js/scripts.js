@@ -43,19 +43,19 @@ document.getElementById('toggleFont').addEventListener('change', function() {
 
 // font size slider
 document.getElementById('fontSlider').addEventListener('input', function() {
-    document.getElementById('textarea').style.fontSize = this.value + 'px';
+    document.getElementById('textarea').style.fontSize = `${this.value}px`;
 });
 
 // make textarea resize height automatically
 const tx = document.getElementsByTagName('textarea');
 for (let i = 0; i < tx.length; i++) {
-    tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+    tx[i].setAttribute('style', `height: ${(tx[i].scrollHeight)}px; overflow-y: hidden;`);
     tx[i].addEventListener('input', OnInput, false);
 }
 
 function OnInput() {
     this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
+    this.style.height = `${(this.scrollHeight)}px`;
 }
 
 /**
