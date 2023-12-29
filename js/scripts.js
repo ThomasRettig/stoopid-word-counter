@@ -5,6 +5,9 @@ if (localStorage.getItem("textValue")) {
   textarea.value = localStorage.getItem("textValue");
 }
 
+let wordsPerMinute = 240;
+
+//function to track text
 const trackText = (e) => {
   let words = e.target.value.split(/\s/g);
   if (words[words.length - 1] === "") {
@@ -25,13 +28,12 @@ textarea.addEventListener("input", trackText);
 // from https://codepen.io/balasubramanim/pen/xypRMP
 
 window.readingTime = (ev) => {
-  const wordsPerMinute = 240;
   let result;
   let words = ev.value.split(/\s/g);
   if (words[words.length - 1] === "") {
     words.pop();
   }
-  let value = Math.ceil(words.Length / wordsPerMinute);
+  let value = Math.ceil(words.length / wordsPerMinute);
   result = `${value} min`;
   document.getElementById("readingTime").innerText = result;
 };
@@ -146,4 +148,9 @@ updateCount = function () {
 textarea.oninput = function (evt) {
   updateCount();
   return false;
+};
+
+const wpm = (event) => {
+  event.target.value = event.target.value.replace(/[^0-9+]/g, "");
+  wordsPerMinute = event.target.value;
 };
