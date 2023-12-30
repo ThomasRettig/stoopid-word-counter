@@ -5,7 +5,9 @@ if (localStorage.getItem("textValue")) {
   textarea.value = localStorage.getItem("textValue");
 }
 
+
 let wordsPerMinute = 240;
+
 
 //function to track text
 const trackText = (e) => {
@@ -29,7 +31,7 @@ textarea.addEventListener("input", trackText);
 
 window.readingTime = (ev) => {
   let result;
-  let words = ev.value.split(/\s/g);
+  let words = ev.value.trim().split(/\s/g);
   if (words[words.length - 1] === "") {
     words.pop();
   }
@@ -37,19 +39,20 @@ window.readingTime = (ev) => {
   result = `${value} min`;
   document.getElementById("readingTime").innerText = result;
 };
+window.readingTime(textarea);
 
 // toggle monospaced font
 document.getElementById("toggleFont").addEventListener("change", function () {
   if (this.checked) {
-    document.getElementById("textarea").classList.add("monospace");
+    textarea.classList.add("monospace");
   } else {
-    document.getElementById("textarea").classList.remove("monospace");
+    textarea.classList.remove("monospace");
   }
 });
 
 // font size slider
 document.getElementById("fontSlider").addEventListener("input", function () {
-  document.getElementById("textarea").style.fontSize = `${this.value}px`;
+  textarea.style.fontSize = `${this.value}px`;
 });
 
 // make textarea resize height automatically
@@ -153,4 +156,5 @@ textarea.oninput = function (evt) {
 const wpm = (event) => {
   event.target.value = event.target.value.replace(/[^0-9+]/g, "");
   wordsPerMinute = event.target.value;
+  window.readingTime(textarea);
 };
