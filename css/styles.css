@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Inter";
-  font-style:  normal;
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url(".././fonts/Inter-Regular.woff2") format("woff2");
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Inter";
-  font-style:  normal;
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
   src: url(".././fonts/Inter-Bold.woff2") format("woff2");
@@ -50,7 +50,8 @@ h1 {
   margin: 0;
 }
 
-textarea, p {
+textarea,
+p {
   font-size: var(--base-font-size);
 }
 
@@ -67,7 +68,10 @@ textarea:focus {
   border-color: #ccc;
 }
 
-p, button, br, input {
+p,
+button,
+br,
+input {
   user-select: none;
 }
 
@@ -86,11 +90,11 @@ input[type="range"] {
   height: 100%;
 }
 
-div > p > span {
+div>p>span {
   font-family: var(--mono-font-stack);
 }
 
-div > p:not(:last-of-type) {
+div>p:not(:last-of-type) {
   margin-bottom: 8px;
 }
 
@@ -100,7 +104,8 @@ strong {
   margin-top: 8px;
 }
 
-strong, div > p > span {
+strong,
+div>p>span {
   user-select: text;
 }
 
@@ -150,7 +155,7 @@ img {
   margin-right: 6px;
 }
 
-footer > p {
+footer>p {
   margin-top: 15px;
 }
 
@@ -163,25 +168,25 @@ a {
 
 .dialog-container,
 .dialog-overlay {
-  position: fixed; 
-  top: 0; 
-  right: 0; 
-  bottom: 0; 
-  left: 0; 
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .dialog-container {
-  z-index: 2; 
+  z-index: 2;
   display: flex;
 }
 
 .dialog-container[aria-hidden="true"] {
-  display: none; 
+  display: none;
 }
 
 .dialog-overlay {
   background-color: rgba(43, 46, 56, 0.9);
-  backdrop-filter: blur(5px); 
+  backdrop-filter: blur(5px);
 }
 
 .dialog-content {
@@ -199,7 +204,7 @@ a {
   justify-content: space-between;
 }
 
-.dialog-header > button {
+.dialog-header>button {
   margin: 0;
 }
 
@@ -250,16 +255,17 @@ a {
   }
 
   /* only do this on non-mobile devices as it is impossible to "hover" on mobile */
-  footer > p {
+  footer>p {
     opacity: 0.35;
   }
 
-  footer > p:hover {
+  footer>p:hover {
     opacity: 1;
   }
 }
 
 @media screen and (prefers-color-scheme: light) {
+
   /* do not font smoothing in dark mode as it reduces readability */
   html {
     -webkit-font-smoothing: antialiased;
@@ -288,7 +294,9 @@ a {
     background-color: var(--dim-black);
   }
 
-  h1, strong, span {
+  h1,
+  strong,
+  span {
     color: white;
   }
 
@@ -306,4 +314,8 @@ a {
   .dialog-content {
     background-color: var(--dim-gray);
   }
+}
+
+#wpm {
+  width: 33.6px;
 }
